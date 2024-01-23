@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains a demonstration of an AI-powered code review system aimed at enhancing the efficiency of the code review process using natural language understanding.
+This repository contains a demonstration of an AI-powered Pull Request review system aimed at enhancing the efficiency of the code review process using natural language understanding.
 
 ## Features
 
