@@ -1,0 +1,17 @@
+# .github/workflows/daily-url-hit.yml
+name: Daily URL Hit
+
+on:
+  schedule:
+    - cron: '15 3 * * *'  # UTC time = 8:45AM IST
+
+jobs:
+  curl-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hit pixelsroutinedev1 (10s hold)
+      run: curl --max-time 10 --no-progress-meter https://pixelsroutinedev1.devtest.catalystone.dev/
+  
+    - name: Hit pixelsroutinedev2 (10s hold)
+      run: curl --max-time 10 --no-progress-meter https://pixelsroutinedev2.devtest.catalystone.dev/
+
