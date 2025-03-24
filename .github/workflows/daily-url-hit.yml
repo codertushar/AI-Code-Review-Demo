@@ -3,15 +3,14 @@ name: Daily URL Hit
 
 on:
   schedule:
-    - cron: '15 3 * * *'  # UTC time = 8:45AM IST
+    - cron: '15 3 * * 1-5'  # Runs at 03:15 UTC (8:45 AM IST) on Monday to Friday
 
 jobs:
   curl-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Hit pixelsroutinedev1 (10s hold)
-      run: curl --max-time 10 --no-progress-meter https://pixelsroutinedev1.devtest.catalystone.dev/
-  
-    - name: Hit pixelsroutinedev2 (10s hold)
-      run: curl --max-time 10 --no-progress-meter https://pixelsroutinedev2.devtest.catalystone.dev/
+      - name: Hit pixelsroutinedev1 (10s hold)
+        run: curl --max-time 10 --no-progress-meter https://pixelsroutinedev1.devtest.catalystone.dev/
 
+      - name: Hit pixelsroutinedev2 (10s hold)
+        run: curl --max-time 10 --no-progress-meter https://pixelsroutinedev2.devtest.catalystone.dev/
